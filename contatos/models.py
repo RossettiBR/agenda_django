@@ -6,9 +6,9 @@ from django.utils import timezone
 
 class Contato(models.Model):
     first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100, blank=True)
     phone = models.CharField(max_length=50)
-    email = models.EmailField(max_length=150)
+    email = models.EmailField(max_length=150, blank=True)
     created_date = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True)
 
