@@ -22,15 +22,13 @@
                 {% for contato in contatos %}
                     <tr class="table-row">
                         <td class="table-cel">
-                            <a href="#" class="table-link">
+                            <a href="{% url 'contato:contato' contato.id %}" class="table-link">
                                 {{ contato.id }}
                             </a>
                         </td>
                         
                         <td class="table-cel">
-                            <a href="#" class="table-link">
                                 {{ contato.first_name }}
-                            </a>
                         </td>
                         <td class="table-cel">
                             {{ contato.last_name }}
