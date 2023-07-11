@@ -6,6 +6,7 @@ mysql_206
 aula207_ola_django/static_files
 mysql_206
 static_files
+static
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
