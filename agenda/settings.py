@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-xe6kkgb@x+p(1kqp3+&+xm77tks8qz+u0wlc7c3&-*n&n=g#pn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: list[str] = []
 
 
 # Application definition
@@ -133,3 +133,8 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    from agenda.local_settings import *
+except ImportError:
+    ...
