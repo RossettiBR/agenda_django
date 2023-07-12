@@ -22,7 +22,12 @@
 
     <div class="search">
         <form action="{% url 'contato:search' %}" method="get">
-            <input type="search" class="search-input" placeholder="Search" id="search" name="q">
+            <input
+             type="search" 
+             class="search-input" 
+             placeholder="Search" id="search" 
+             name="q" 
+             value="{{ request.GET.q.stri }}">
         </form>
     </div>
 </header>
