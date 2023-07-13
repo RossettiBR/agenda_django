@@ -1,12 +1,17 @@
-from django.shortcuts import get_list_or_404, redirect, render
-
-from contatos.models import Contato
+from django.shortcuts import render
+from contatos.forms import ContatoForms
 
 
 def create(request):
-    context = {
+    if request.method == 'POST':
+        context = {
+            'form': ContatoForms(request.POST)
+        }
 
+    context = {
+        'form': ContatoForms()
     }
+
     return render(
         request,
         'contato/create.html',
