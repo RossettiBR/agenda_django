@@ -8,4 +8,6 @@ urlpatterns = [
     path('search/', views.search, name='search'),  # type:ignore
     path('', views.index, name='index'),  # type:ignore
     path('contato/create/', views.create, name='create'),  # type:ignore
+    path('contato/<int:contact_id>/update/', views.update, name='update'),  # type:ignore
+    path('contato/<int:contact_id>/delete/', views.delete, name='delete'),  # type:ignore
 ]
