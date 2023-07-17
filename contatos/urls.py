@@ -1,13 +1,15 @@
+# type:ignore
 from django.urls import path
 from contatos import views
 
 app_name = 'contato'
 
 urlpatterns = [
-    path('contato/<int:contact_id>/detail/', views.contato, name='contato'),  # type:ignore
-    path('search/', views.search, name='search'),  # type:ignore
-    path('', views.index, name='index'),  # type:ignore
-    path('contato/create/', views.create, name='create'),  # type:ignore
-    path('contato/<int:contact_id>/update/', views.update, name='update'),  # type:ignore
-    path('contato/<int:contact_id>/delete/', views.delete, name='delete'),  # type:ignore
+    path('contato/<int:contact_id>/detail/', views.contato, name='contato'),
+    path('search/', views.search, name='search'),
+    path('', views.index, name='index'),
+    path('contato/create/', views.create, name='create'),
+    path('contato/<int:contact_id>/update/', views.update, name='update'),
+    path('contato/<int:contact_id>/delete/', views.delete, name='delete'),
+    path('user/create/', views.register, name='register'),
 ]
