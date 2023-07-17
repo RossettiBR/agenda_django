@@ -31,7 +31,8 @@ def user_update(request):
     if request.method != 'POST':
         return render(
             request,
-            'contato/register.html', {
+            'contato/user_update.html',
+            {
                 'form': form
             }
         )
@@ -41,19 +42,15 @@ def user_update(request):
     if not form.is_valid():
         return render(
             request,
-            'contato/register.html', {
+            'contato/user_update.html',
+            {
                 'form': form
             }
         )
 
     form.save()
 
-    return render(
-            request,
-            'contato/register.html', {
-                'form': form
-            }
-    )
+    return redirect('contato:user_update')
 
 
 def login_view(request):
