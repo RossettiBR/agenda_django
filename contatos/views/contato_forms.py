@@ -8,7 +8,7 @@ def create(request):
     form_action = reverse('contato:create')
 
     if request.method == 'POST':
-        form = ContatoForms(request.POST)
+        form = ContatoForms(request.POST, request.FILES)
         context = {
             'form': form,
             'form_action': form_action,
@@ -41,7 +41,7 @@ def update(request, contact_id):
     form_action = reverse('contato:update', args=(contact_id,))
 
     if request.method == 'POST':
-        form = ContatoForms(request.POST, instance=contact)
+        form = ContatoForms(request.POST, request.FILES, instance=contact)
 
         context = {
             'form': form,
