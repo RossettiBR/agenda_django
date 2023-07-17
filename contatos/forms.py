@@ -4,28 +4,17 @@ from django.core.exceptions import ValidationError
 
 
 class ContatoForms(forms.ModelForm):
-    first_name = forms.CharField(
-        widget=forms.TextInput(
+    picture = forms.ImageField(
+        widget=forms.FileInput(
             attrs={
-                'class': 'classe-a classe-b',
-                'placeholder': 'Aqui veio do init'
+                'accept': 'image/*',
             }
-        ),
-        label='Primeiro nome',
-        help_text='Texto para ajudar seu usuario'
+        )
     )
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        # self.fields['first_name'].widget.attrs.update({
-        #     'class': 'classe-a classe-b',
-        #     'placeholder': 'Aqui veio do init'
-        # })
 
     class Meta:
         model = Contato
-        fields = 'first_name', 'last_name', 'phone', 'email', 'description', 'category',
+        fields = 'first_name', 'last_name', 'phone', 'email', 'description', 'category', 'picture',
         # widgets = {
         #     'first_name': forms.TextInput(
         #         attrs={
