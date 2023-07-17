@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from contatos.forms import RegisterForm
+from django.contrib import messages
 
 
 def register(request):
@@ -10,6 +11,7 @@ def register(request):
 
         if form.is_valid():
             form.save()
+            messages.success(request, 'Usuário Salvo com Sucesso')
 
     return render(
         request,
