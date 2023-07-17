@@ -12,7 +12,8 @@ class ContatoForms(forms.ModelForm):
             attrs={
                 'accept': 'image/*',
             }
-        )
+        ),
+        required=False
     )
 
     class Meta:
